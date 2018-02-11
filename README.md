@@ -49,6 +49,8 @@ export default class DemoEditor extends Component {
 draft-js will convert `<img />` to the emoji of camera (📷) when you copy n paste.
 So EmojiOne's emoji image will be converted as well. This is not an assumed behavior.
 
+[Demo](https://sugarshin.github.io/draft-js-pasted-emojione-plugin/)
+
 ref: https://github.com/facebook/draft-js/pull/1378
 
 ## Option
@@ -59,7 +61,7 @@ ref: https://github.com/facebook/draft-js/pull/1378
 
 | Property | Type | Default |
 |:---|:---|:---|
-| `config.selector` | string | '.emojione' |
+| `config.selector` | string | `'.emojione'` |
 
 ## license
 

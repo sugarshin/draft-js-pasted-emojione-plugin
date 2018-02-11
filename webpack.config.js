@@ -14,7 +14,6 @@ const htmlWebpackPluginConfig = {
 
 const entry = [
   '@babel/polyfill',
-  'webpack-hot-middleware/client',
   './example/index.js',
 ]
 
@@ -26,24 +25,37 @@ const plugins = [
   }),
   new CleanWebpackPlugin([BUILD_DIR]),
   new HtmlWebpackPlugin(htmlWebpackPluginConfig),
-  new webpack.NamedModulesPlugin(),
-  new webpack.HotModuleReplacementPlugin(),
 ]
 
 if (production) {
   plugins.push(
-    new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false, screw_ie8: true } })
+    new webpack.optimize.UglifyJsPlugin({
+      uglifyOptions: {
+        ecma: 8,
+        output: { ascii_only: true, beautify: false, indent_level: 2 },
+      },
+    }),
+  )
+} else {
+  entry.push(
+    'webpack-hot-middleware/client',
+    entry.pop(),
+  )
+
+  plugins.push(
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
   )
 }
 
 module.exports = {
   plugins,
   entry,
-  cache: true,
+  cache: production !== true,
   output: {
     path: path.resolve(__dirname, BUILD_DIR),
     filename: 'app.js',
-    publicPath: '/',
+    publicPath: production ? '' : '/',
   },
   resolve: {
     alias: {

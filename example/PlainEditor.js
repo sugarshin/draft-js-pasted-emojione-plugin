@@ -1,14 +1,7 @@
 import React, { Component } from 'react'
-import { EditorState, RichUtils } from 'draft-js'
-import Editor from 'draft-js-plugins-editor'
-import createEmojiPlugin from 'draft-js-emoji-plugin'
-import createPastedEmojionePlugin from 'draft-js-pasted-emojione-plugin'
+import { Editor, EditorState, RichUtils } from 'draft-js'
 
-const emojiPlugin = createEmojiPlugin()
-const pastedEmojionePlugin = createPastedEmojionePlugin()
-const plugins = [emojiPlugin, pastedEmojionePlugin]
-
-export default class DemoEditor extends Component {
+export default class PlainEditor extends Component {
   state = { editorState: EditorState.createEmpty() }
 
   onChange = editorState => this.setState({ editorState })
@@ -27,17 +20,15 @@ export default class DemoEditor extends Component {
   render() {
     return (
       <div className='editor'>
-        <h2>Fixed</h2>
-        <div onClick={this.focus} className='demo-editor'>
+        <h2>Default</h2>
+        <div onClick={this.focus} className='plain-editor'>
           <Editor
             ref={c => this.editor = c}
             placeholder='Contents in here...'
             editorState={this.state.editorState}
-            plugins={plugins}
             onChange={this.onChange}
             handleKeyCommand={this.handleKeyCommand}
           />
-          <emojiPlugin.EmojiSuggestions />
         </div>
       </div>
     )

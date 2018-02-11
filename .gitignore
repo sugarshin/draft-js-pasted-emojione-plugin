@@ -64,3 +64,5 @@ typings/
 
 es
 lib
+build
+.deploy
