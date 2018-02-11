@@ -1,0 +1,21 @@
+.app {
+  text-align: center;
+}
+
+.emojione {
+  max-width: 16px;
+  max-height: 16px;
+}
+
+.sample {
+  margin: 2em 0 0;
+}
+
+.demo-editor {
+  max-width: 640px;
+  margin: 0 auto;
+  min-height: 320px;
+  border: 1px solid #ddd;
+  padding: 1em;
+  text-align: left;
+}

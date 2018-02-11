@@ -1,0 +1,93 @@
+{
+  "name": "draft-js-pasted-emojione-plugin",
+  "version": "0.0.0",
+  "description": "Pasted EmojiOne plugin for draft-js-plugins",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "jsnext:main": "es/index.js",
+  "files": [
+    "lib",
+    "es"
+  ],
+  "scripts": {
+    "lint": "eslint src",
+    "test": "ava -v",
+    "test:coverage": "nyc npm test",
+    "clean:lib": "if [ -d lib ]; then rm -rf lib; fi",
+    "clean:es": "if [ -d es ]; then rm -rf es; fi",
+    "clean": "npm run clean:lib && npm run clean:es",
+    "build:commonjs": "BABEL_ENV=commonjs babel --ignore=**/__tests__/** -d lib src",
+    "build:es": "BABEL_ENV=es babel --ignore=**/__tests__/** -d es src",
+    "build": "npm run build:commonjs && npm run build:es",
+    "prebuild": "npm run clean",
+    "start": "node ./server",
+    "prepublishOnly": "npm run lint && npm test && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sugarshin/draft-js-pasted-emojione-plugin.git"
+  },
+  "keywords": [
+    "draft-js"
+  ],
+  "author": "Shingo Sato",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sugarshin/draft-js-pasted-emojione-plugin/issues"
+  },
+  "homepage": "https://github.com/sugarshin/draft-js-pasted-emojione-plugin#readme",
+  "ava": {
+    "require": [
+      "@babel/register",
+      "./config/browser-env-configure"
+    ]
+  },
+  "nyc": {
+    "all": true,
+    "include": [
+      "src/**/*.js"
+    ]
+  },
+  "peerDependencies": {
+    "draft-js": "^0.10.5",
+    "draft-js-plugins-editor": "^2.0.0",
+    "react": "^16.0.0 || ^15.0.0",
+    "react-dom": "^16.0.0 || ^15.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.39",
+    "@babel/core": "^7.0.0-beta.39",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.39",
+    "@babel/polyfill": "^7.0.0-beta.39",
+    "@babel/preset-es2015": "^7.0.0-beta.39",
+    "@babel/preset-es2016": "^7.0.0-beta.39",
+    "@babel/preset-es2017": "^7.0.0-beta.39",
+    "@babel/preset-react": "^7.0.0-beta.39",
+    "@babel/register": "^7.0.0-beta.39",
+    "ava": "^1.0.0-beta.1",
+    "babel-eslint": "^8.2.1",
+    "babel-loader": "^8.0.0-beta.0",
+    "browser-env": "^3.2.5",
+    "clean-webpack-plugin": "^0.1.18",
+    "codecov": "^3.0.0",
+    "css-loader": "^0.28.9",
+    "draft-js": "^0.10.5",
+    "draft-js-emoji-plugin": "^2.0.1",
+    "draft-js-plugins-editor": "^2.0.4",
+    "eslint": "^4.17.0",
+    "eslint-plugin-ava": "^4.5.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "express": "^4.16.2",
+    "html-webpack-plugin": "^2.30.1",
+    "nyc": "^11.4.1",
+    "raf": "^3.4.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-ghfork": "^0.5.1",
+    "react-hot-loader": "^4.0.0-beta.22",
+    "style-loader": "^0.20.1",
+    "webpack": "^3.11.0",
+    "webpack-dev-middleware": "^2.0.5",
+    "webpack-hot-middleware": "^2.21.0"
+  }
+}
