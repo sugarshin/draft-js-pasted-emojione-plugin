@@ -67,7 +67,7 @@ ref: https://github.com/facebook/draft-js/pull/1378
 
 © sugarshin
 
-[circleci-image]: https://circleci.com/gh/sugarshin/draft-js-pasted-emojione-plugin/tree/master.svg?style=svg&circle-token=
+[circleci-image]: https://circleci.com/gh/sugarshin/draft-js-pasted-emojione-plugin/tree/master.svg?style=svg&circle-token=2cbb475f9880e574e1c8b6026b8cc90d3c550fc0
 [circleci-url]: https://circleci.com/gh/sugarshin/draft-js-pasted-emojione-plugin/tree/master
 [coveralls-image]: https://coveralls.io/repos/github/sugarshin/draft-js-pasted-emojione-plugin/badge.svg?branch=master
 [coveralls-url]: https://coveralls.io/github/sugarshin/draft-js-pasted-emojione-plugin?branch=master
