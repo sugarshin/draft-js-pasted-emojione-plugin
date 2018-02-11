@@ -1,7 +1,7 @@
 # draft-js-pasted-emojione-plugin
 
 [![CircleCI][circleci-image]][circleci-url]
-[![Coverage Status][coveralls-image]][coveralls-url]
+[![Codecov][codecov-image]][codecov-url]
 
 [![npm version][npm-image]][npm-url]
 [![License][license-image]][license-url]
@@ -69,8 +69,8 @@ ref: https://github.com/facebook/draft-js/pull/1378
 
 [circleci-image]: https://circleci.com/gh/sugarshin/draft-js-pasted-emojione-plugin/tree/master.svg?style=svg&circle-token=2cbb475f9880e574e1c8b6026b8cc90d3c550fc0
 [circleci-url]: https://circleci.com/gh/sugarshin/draft-js-pasted-emojione-plugin/tree/master
-[coveralls-image]: https://coveralls.io/repos/github/sugarshin/draft-js-pasted-emojione-plugin/badge.svg?branch=master
-[coveralls-url]: https://coveralls.io/github/sugarshin/draft-js-pasted-emojione-plugin?branch=master
+[codecov-image]: https://codecov.io/gh/sugarshin/draft-js-pasted-emojione-plugin/branch/master/graph/badge.svg
+[codecov-url]: https://codecov.io/gh/sugarshin/draft-js-pasted-emojione-plugin
 [npm-image]: https://img.shields.io/npm/v/draft-js-pasted-emojione-plugin.svg?style=flat-square
 [npm-url]: https://www.npmjs.org/package/draft-js-pasted-emojione-plugin
 [license-image]: https://img.shields.io/:license-mit-blue.svg?style=flat-square
