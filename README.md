@@ -57,11 +57,14 @@ ref: https://github.com/facebook/draft-js/pull/1378
 
 ### `config`
 
-`createPastedEmojionePlugin(config)`
+```js
+createPastedEmojionePlugin(config)
+```
 
 | Property | Type | Default |
 |:---|:---|:---|
-| `config.selector` | string | `'.emojione'` |
+| `config.selector` | string | `'img.emojione'` |
+| `config.getUnicode` | function | `img => img.getAttribute('alt')` |
 
 ## license
 
