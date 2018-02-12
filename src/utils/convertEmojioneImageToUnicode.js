@@ -1,7 +1,6 @@
 import getDummyElement from './getDummyElement'
-import getUnicode from './getUnicode'
 
-const convertEmojioneToUnicode = (html, selector) => {
+const convertEmojioneImageToUnicode = (html, { selector, getUnicode }) => {
   const el = getDummyElement()
   el.innerHTML = html
   const emojioneEl = el.querySelectorAll(selector)
@@ -17,4 +16,4 @@ const convertEmojioneToUnicode = (html, selector) => {
   return el.innerHTML
 }
 
-export default convertEmojioneToUnicode
+export default convertEmojioneImageToUnicode
