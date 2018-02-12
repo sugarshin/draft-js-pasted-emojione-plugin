@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const pkg = require('./package.json')
 
@@ -25,6 +26,11 @@ const plugins = [
   }),
   new CleanWebpackPlugin([BUILD_DIR]),
   new HtmlWebpackPlugin(htmlWebpackPluginConfig),
+  new HtmlWebpackIncludeAssetsPlugin({
+    assets: ['https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/css/emojione.min.css'],
+    append: false,
+    publicPath: '',
+  }),
 ]
 
 if (production) {
